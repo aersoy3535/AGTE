@@ -1,0 +1,268 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+/*16px*/
+
+body {
+  font-family: "Helvetica", sans-serif;
+  background-color: rgb(108, 108, 108);
+}
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+
+.modal-container {
+  position: relative;
+  width: 40vw;
+  height: 80vh;
+  min-width: 375px;
+  min-height: 800px;
+  background: white;
+  border: 3px solid;
+  border-color: rgb(33, 68, 85);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+  padding-right: 2%;
+  justify-content: space-evenly;
+
+}
+
+.title-container>h2 {
+  justify-content: center;
+  display: flex;
+  color: rgb(33, 68, 85);
+  font-size: 2.3rem;
+
+}
+
+.disclaimer-container {
+  color: black;
+  display: inline-block;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.disclaimer-container p {
+  margin-bottom: 5vh;
+}
+
+.disclaimer-container p:nth-child(3) {
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#accept-button {
+  color: white;
+  background-color: rgb(33, 68, 85);
+  border-radius: 10px;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#calculate-button {
+  color: white;
+  background-color: rgb(33, 68, 85);
+  border-radius: 10px;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.throw-error{
+  color: #b71c1c;
+  background-color: #f8bbd0;
+  border-color: #f48fb1;
+  text-align: center;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 4px;
+  text-align: center;
+  animation: fadeIn 0.5s;
+
+}
+
+#bhirtday-title{
+  font-size: xx-large;
+  text-align: center;
+}
+
+.ageinput-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+  z-index: 99;
+}
+
+.ageinput-container {
+  position: relative;
+  width: 40vw;
+  height: 80vh;
+  min-width: 375px;
+  min-height: 800px;
+  background: white;
+  border: 3px solid;
+  border-color: rgb(33, 68, 85);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+  padding-right: 2%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.enquiry-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+  z-index: 98;
+}
+
+.enquiry-container {
+  position: relative;
+  width: 40vw;
+  height: 80vh;
+  min-width: 375px;
+  min-height: 800px;
+  background: white;
+  border: 3px solid;
+  border-color: rgb(33, 68, 85);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+  padding-right: 2%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.enquiry-container div{
+  height: 12rem;
+}
+
+.question-button-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.question-button-container button{
+  width: 100%;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 20px;
+  border: 2px rgb(33, 68, 85) solid;
+  background-color: transparent;
+  font-weight: bolder;
+  height: 3rem;
+}
+
+#yes-button:hover{
+  background-color: rgb(44,205,185);
+  color: rgb(33, 68, 85);
+  transform: scale(1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#no-button:hover{
+  background-color: #b71c1c;;
+  color: white;
+  transform: scale(1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#unknown-button:hover{
+  background-color: #0066FF;
+  color: white;
+  transform: scale(1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-container {
+    overflow: scroll;
+  }
+
+  #accept-button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+}
+
+@media screen and (max-width: 1500px){
+
+  #calculate-button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+  
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
