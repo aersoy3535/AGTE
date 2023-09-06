@@ -26,7 +26,7 @@ const Enquiry = () => {
         checkAnswered()
         goBack()
         questionHistoryBuilder()
-        console.log(dilScore, sosyalScore, kabaScore, inceScore)
+        console.log(dilScore,inceScore , kabaScore, sosyalScore)
     }, [monthIndex, yearIndex, isGoingBack])//Cevaplanan sorununun YearIndex ve MonthIndex state'ine bağlı olarak güncellenmesi için
 
     const goBack = () => {
