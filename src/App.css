@@ -793,3 +793,32 @@ textarea{
   padding: 10px;
   line-height: 1.5;
 }
+
+.chartpage-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+
+.chartpage-container{
+  position: relative;
+  width: 60vw;
+  height: 80vh;
+  min-width: 375px;
+  min-height: 800px;
+  background: white;
+  border: 3px solid;
+  border-color: rgb(33, 68, 85);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+  padding-right: 2%;
+  justify-content: space-evenly;
+  max-width: 1200px;
+}
