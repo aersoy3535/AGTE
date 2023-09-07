@@ -13,14 +13,13 @@ function App() {
   const { accepted,isCalculated, formFilled, isTerminated } = useContext(AppContext)
 
   return (
-    /*<main>
+    <main>
     {accepted && <Modal />}
     {formFilled && <Form/>}
     {isCalculated ? null : <AgeInput />}
     {isCalculated ? <Enquiry /> : null}
     {isTerminated ? <LastForm /> : null}
-    </main>*/
-    <ChartPage />
+    </main>
    
   )
 }

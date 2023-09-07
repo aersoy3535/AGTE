@@ -770,6 +770,19 @@ table tr td {
 
 }
 
+@media screen and (max-height: 800px) {
+
+  .modal-overlay, .form-overlay, .ageinput-overlay, .enquiry-overlay{
+    overflow: scroll;
+  }
+
+  #calculate-button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

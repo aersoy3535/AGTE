@@ -23,7 +23,7 @@ const Chart = () => {
       <VictoryAxis
         tickValues={data.map((item) => item.name)}
         style={{
-          tickLabels: { fontSize: 8, fill: 'black' }, 
+          tickLabels: { fontSize: 8, fill: 'black', angle: -45 }, 
         }}
       />
       <VictoryAxis
