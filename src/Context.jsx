@@ -4,8 +4,8 @@ const AppContext = createContext()
 
 export function AppProvider({ children }) {
 
-    const [accepted, setAccepted] = useState(false)
-    const [formFilled, setFormFilled] = useState(false)
+    const [accepted, setAccepted] = useState(true)
+    const [formFilled, setFormFilled] = useState(true)
     const [selectedDate, setSelectedDate] = useState(new Date())
 
     const [age, setAge] = useState({

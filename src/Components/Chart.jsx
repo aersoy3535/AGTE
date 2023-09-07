@@ -18,8 +18,8 @@ const data = [
 
 const Chart = () => {
   return (
-    <VictoryChart width={500} height={400} theme={VictoryTheme.material}>
-      <VictoryLegend x={250} y={10} orientation="horizontal" data={[{ name: 'Skor' }, { name: 'Ortalama' }]} />
+    <VictoryChart width={500} height={400} theme={VictoryTheme.material} animate={{ duration: 1000, onLoad: { duration: 1000, easing: 'bounce' } }}>
+      <VictoryLegend x={190} y={10} orientation="horizontal" data={[{ name: 'Skor', symbol:{fill: 'rgb(33, 68, 85)'} }, { name: 'Ortalama', symbol:{fill: 'rgb(44, 205, 185)'} }]} />
       <VictoryAxis
         tickValues={data.map((item) => item.name)}
         style={{
@@ -35,8 +35,12 @@ const Chart = () => {
           tickLabels: { fontSize: 8, fill: 'black' }, 
         }}
       />
-      <VictoryBar data={data} x="name" y="uv" barWidth={12} />
-      <VictoryLine data={data} x="name" y="pv" />
+      <VictoryBar data={data} x="name" y="uv" barWidth={12} style={{
+        data:{ stroke: 'rgb(33, 68, 85)'}
+      }} />
+      <VictoryLine data={data} x="name" y="pv" style={{
+        data:{ stroke: 'rgb(44, 205, 185)'}
+      }}/>
     </VictoryChart>
   );
 };
