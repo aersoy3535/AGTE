@@ -119,7 +119,7 @@ const questions = [
         id:18,
         answered: false,
         text: "Elindeki oyuncağı, ekmeği ağzına götürür mü?",
-        developementArea: "Kaba Motor"
+        developementArea: "Ince Motor"
     },
     {
         id:19,
@@ -245,7 +245,7 @@ const questions = [
         id:38,
         answered: false,
         text:"Küçük üzüm tanelerini avuçlayarak eline alır mı?",
-        developementArea: "Kaba Motor"
+        developementArea: "Ince Motor"
     },
     {
         id:39,
@@ -304,7 +304,7 @@ const questions = [
         id: 47,
         answered: false,
         text: "“El çırpar” oyunu oynar mı? (Göstererek sorun)",
-        developementArea: "Dil-Bilissel",
+        developementArea: "Sosyal Beceri-Oz bakim",
     },
     {
         id: 48,
@@ -433,8 +433,8 @@ const questions = [
     {
         id: 67,
         answered: false,
-        text: "Sosyal Beceri-Oz bakim",
-        developementArea: "Dil-Bilissel"
+        text: "Bazı işleri kendi başına yapmakta ısrar eder mi?",
+        developementArea: "Sosyal Beceri-Oz bakim"
     },
     {
         id: 68,
@@ -487,7 +487,7 @@ const questions = [
         id: 75,
         answered: false,
         text: "Ayakkabı ve çorabını çıkarır mı?",
-        developementArea: "Kaba Motor"
+        developementArea: "Sosyal Beceri-Oz bakim"
     }
 ]
 },
@@ -866,7 +866,7 @@ const questions = [
         id: 134,
         answered: false,
         text: "”Eğer uslu durursam bana şeker verir misin?” gibi eğerle başlayan cümleler kurar mı?",
-        developementArea: "Ince Motor"
+        developementArea: "Dil-Bilissel"
     }
 ]
 },
@@ -931,7 +931,7 @@ const questions = [
         id: 144,
         answered: false,
         text: "Makasla gazeteden, dergiden resim keser mi?",
-        developementArea: "Dil-Bilissel"
+        developementArea: "Ince Motor"
     },
     {
         id: 145,
@@ -985,7 +985,7 @@ const questions = [
         id: 153,
         answered: false,
         text: "Köydeyse: Köyün, kasabanın adını bilir mi? Şehirdeyse: Mahallenin, sokağın adını bilir mi?",
-        developementArea: "Ince Motor"
+        developementArea: "Dil-Bilissel"
     }
 ]
 }
