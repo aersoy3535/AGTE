@@ -15,6 +15,8 @@ const Enquiry = () => {
     const { terminatePoint, setTerminatePoint } = useContext(AppContext)
     const { questionHistory, setQuestionHistory } = useContext(AppContext)
     const { setIsTerminated } = useContext(AppContext)
+    const { dilScoreTreshold, sosyalScoreTreshold, kabaScoreTreshold, inceScoreTreshold } = useContext(AppContext)
+
 
     const [isGoingBack, setIsGoingBack] = useState(true)
     const [throwError, setThrowError] = useState(false)
@@ -26,7 +28,8 @@ const Enquiry = () => {
         checkAnswered()
         goBack()
         questionHistoryBuilder()
-        console.log(dilScore,inceScore , kabaScore, sosyalScore)
+        console.log(dilScoreTreshold, inceScoreTreshold, kabaScoreTreshold, sosyalScoreTreshold)
+
     }, [monthIndex, yearIndex, isGoingBack])//Cevaplanan sorununun YearIndex ve MonthIndex state'ine bağlı olarak güncellenmesi için
 
     const goBack = () => {

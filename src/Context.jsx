@@ -4,8 +4,8 @@ const AppContext = createContext()
 
 export function AppProvider({ children }) {
 
-    const [accepted, setAccepted] = useState(true)
-    const [formFilled, setFormFilled] = useState(true)
+    const [accepted, setAccepted] = useState(false)
+    const [formFilled, setFormFilled] = useState(false)
     const [selectedDate, setSelectedDate] = useState(new Date())
 
     const [age, setAge] = useState({
@@ -32,7 +32,7 @@ export function AppProvider({ children }) {
     
     const [dilScoreTreshold, setDilScoreTreshold] = useState(0)
     const [sosyalScoreTreshold, setSosyalScoreTreshold] = useState(0)
-    const [kabaScoreRTreshold, setKabaScoreTreshold] = useState(0)
+    const [kabaScoreTreshold, setKabaScoreTreshold] = useState(0)
     const [inceScoreTreshold, setInceScoreTreshold] = useState(0)
 
     const [terminatePoint, setTerminatePoint] = useState(0)
@@ -78,7 +78,7 @@ export function AppProvider({ children }) {
             monthIndex, setMonthIndex, yearIndex, setYearIndex, setDilScore, setSosyalScore, setKabaScore, setInceScore,
             terminatePoint, setTerminatePoint, formData, setFormData, questionHistory, setQuestionHistory,
             dilScore, sosyalScore, kabaScore, inceScore, testTerminated, setTestTerminated, isTerminated, setIsTerminated,
-            dilScoreTreshold, setDilScoreTreshold,sosyalScoreTreshold, setSosyalScoreTreshold,kabaScoreRTreshold, setKabaScoreTreshold,inceScoreTreshold, setInceScoreTreshold
+            dilScoreTreshold, setDilScoreTreshold,sosyalScoreTreshold, setSosyalScoreTreshold,kabaScoreTreshold, setKabaScoreTreshold,inceScoreTreshold, setInceScoreTreshold
         }}>
             {children}
         </AppContext.Provider>
