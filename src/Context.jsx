@@ -28,7 +28,13 @@ export function AppProvider({ children }) {
     const [kabaScore, setKabaScore] = useState(0)
     const [inceScore, setInceScore] = useState(0)
 
+    /*Score Tresholds*/
     
+    const [dilScoreTreshold, setDilScoreTreshold] = useState(0)
+    const [sosyalScoreTreshold, setSosyalScoreTreshold] = useState(0)
+    const [kabaScoreRTreshold, setKabaScoreTreshold] = useState(0)
+    const [inceScoreTreshold, setInceScoreTreshold] = useState(0)
+
     const [terminatePoint, setTerminatePoint] = useState(0)
 
     const [testTerminated, setTestTerminated] = useState(false)
@@ -71,7 +77,8 @@ export function AppProvider({ children }) {
             age, setAge, isCalculated, setIsCalculated, isDateNull, setIsDateNull, 
             monthIndex, setMonthIndex, yearIndex, setYearIndex, setDilScore, setSosyalScore, setKabaScore, setInceScore,
             terminatePoint, setTerminatePoint, formData, setFormData, questionHistory, setQuestionHistory,
-            dilScore, sosyalScore, kabaScore, inceScore, testTerminated, setTestTerminated, isTerminated, setIsTerminated
+            dilScore, sosyalScore, kabaScore, inceScore, testTerminated, setTestTerminated, isTerminated, setIsTerminated,
+            dilScoreTreshold, setDilScoreTreshold,sosyalScoreTreshold, setSosyalScoreTreshold,kabaScoreRTreshold, setKabaScoreTreshold,inceScoreTreshold, setInceScoreTreshold
         }}>
             {children}
         </AppContext.Provider>
