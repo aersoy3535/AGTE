@@ -6,11 +6,13 @@ import AppContext from "../Context"
 const LastForm = () => {
 
     const { formData, setFormData } = useContext(AppContext)
+    const { setSecondFormFilled } = useContext(AppContext)
 
     const [earlyBirth, setEarlyBirth] = useState(false)
     const [afterBirthComplication, setAfterBirthComplication] = useState([])
     const [askSave, setAskSave] = useState(false)
     const [throwError, setThrowError] = useState(false)
+
 
     const realtivityHandler = (event) => {
         const { value, name, checked, type } = event.target
@@ -122,7 +124,6 @@ const LastForm = () => {
             formData.isParentRelative !== "" &&
             formData.isEarlyBirth !== "" &&
             formData.birthWeight !== "" &&
-            formData.afterBirthComplication !== "" &&
             formData.generalObservation !== "" &&
             formData.parentCredibility !== ""
         ) {
@@ -139,7 +140,8 @@ const LastForm = () => {
     }
 
     const continueButton = () => {
-        console.log(formData)
+        setAskSave(false)
+        setSecondFormFilled(true)
     }
 
     return (

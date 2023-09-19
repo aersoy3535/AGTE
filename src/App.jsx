@@ -10,15 +10,17 @@ import { useContext } from 'react'
 
 function App() {
 
-  const { accepted,isCalculated, formFilled, isTerminated } = useContext(AppContext)
+  const { accepted,isCalculated, formFilled, isTerminated, secondFormFilled } = useContext(AppContext)
 
   return (
+    
     <main>
     {accepted && <Modal />}
     {formFilled && <Form/>}
     {isCalculated ? null : <AgeInput />}
     {isCalculated ? <Enquiry /> : null}
     {isTerminated ? <LastForm /> : null}
+    {secondFormFilled ? <ChartPage/> : null}
     </main>
    
   )

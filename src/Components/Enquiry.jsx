@@ -28,7 +28,7 @@ const Enquiry = () => {
         checkAnswered()
         goBack()
         questionHistoryBuilder()
-        console.log(dilScoreTreshold, inceScoreTreshold, kabaScoreTreshold, sosyalScoreTreshold)
+        console.log(terminatePoint)
 
     }, [monthIndex, yearIndex, isGoingBack])//Cevaplanan sorununun YearIndex ve MonthIndex state'ine bağlı olarak güncellenmesi için
 
@@ -183,6 +183,11 @@ const Enquiry = () => {
 
     }
 
+    const disgardEndTest = () => {
+        setTerminatePoint(prevValue => prevValue -1)
+        setEndTest(false)
+    }
+
     return (
         <>
             {endTest && (
@@ -190,7 +195,7 @@ const Enquiry = () => {
                     <div className="endtest-content">
                         <p>8 soru üst üste hayır cevaplandı, testin bitmesi gerekiyor.</p>
                         <div className="endtest-container">
-                            <button onClick={() => setEndTest(false)} >Vazgeç</button>
+                            <button onClick={disgardEndTest} >Vazgeç</button>
                             <button onClick={endTestButton}>Testi bitir</button>
                         </div>
                     </div>

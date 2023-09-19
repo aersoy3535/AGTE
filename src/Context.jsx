@@ -7,6 +7,8 @@ export function AppProvider({ children }) {
     const [accepted, setAccepted] = useState(false)
     const [formFilled, setFormFilled] = useState(false)
     const [selectedDate, setSelectedDate] = useState(new Date())
+    const [secondFormFilled, setSecondFormFilled] = useState(false)
+
 
     const [age, setAge] = useState({
         userYear: 0,
@@ -17,7 +19,6 @@ export function AppProvider({ children }) {
 
     const [isCalculated, setIsCalculated] = useState(false)
     const [isDateNull, setIsDateNull] = useState(false)
-    const [isTerminated, setIsTerminated] = useState(false)
 
     const [monthIndex, setMonthIndex] = useState(0)
     const [yearIndex, setYearIndex] = useState(0)
@@ -35,9 +36,11 @@ export function AppProvider({ children }) {
     const [kabaScoreTreshold, setKabaScoreTreshold] = useState(0)
     const [inceScoreTreshold, setInceScoreTreshold] = useState(0)
 
+    /*Test Termination*/
     const [terminatePoint, setTerminatePoint] = useState(0)
-
     const [testTerminated, setTestTerminated] = useState(false)
+    const [isTerminated, setIsTerminated] = useState(false)
+
 
 
     /*Child State*/
@@ -78,7 +81,8 @@ export function AppProvider({ children }) {
             monthIndex, setMonthIndex, yearIndex, setYearIndex, setDilScore, setSosyalScore, setKabaScore, setInceScore,
             terminatePoint, setTerminatePoint, formData, setFormData, questionHistory, setQuestionHistory,
             dilScore, sosyalScore, kabaScore, inceScore, testTerminated, setTestTerminated, isTerminated, setIsTerminated,
-            dilScoreTreshold, setDilScoreTreshold,sosyalScoreTreshold, setSosyalScoreTreshold,kabaScoreTreshold, setKabaScoreTreshold,inceScoreTreshold, setInceScoreTreshold
+            dilScoreTreshold, setDilScoreTreshold,sosyalScoreTreshold, setSosyalScoreTreshold,kabaScoreTreshold, setKabaScoreTreshold,inceScoreTreshold, setInceScoreTreshold,
+            secondFormFilled, setSecondFormFilled
         }}>
             {children}
         </AppContext.Provider>
