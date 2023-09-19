@@ -18,6 +18,10 @@ const Form = () => {
 
     const { formData, setFormData, setFormFilled } = useContext(AppContext)
 
+    useEffect(() => {
+        console.log(formData)
+    }, [formData])
+
     const increaseInput = () => {
         if (inputList.length <= 2) {
             const newInput = [...inputList]
@@ -200,10 +204,11 @@ const Form = () => {
     /*City names*/
 
     const cityName = cities.map((item) => item.il)
+    const cityNameSorted = cityName.sort((a,b) => a.localeCompare(b, "tr"))
 
     const getDistrictByCity = (cityName) => {
         const districtData = cities.find((item) => item.il === cityName)
-        return districtData ? districtData.ilceler : []
+        return districtData ? districtData.ilceler.sort((a,b) => {a.localeCompare(b, "tr")}) : []
     }
 
     const handleCityChange = (event) => {
@@ -357,7 +362,7 @@ const Form = () => {
                             <label>İl</label>
                             <select id="city" name="city" onChange={handleCityChange} value={selectedCity}>
                                 <option value="">İl Seçin</option>
-                                {cityName.map((cityName) => (
+                                {cityNameSorted.map((cityName) => (
                                     <option key={cityName} value={cityName}>
                                         {cityName}
                                     </option>
