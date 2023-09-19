@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { BiSolidMinusCircle, BiSolidPlusCircle } from 'react-icons/bi'
 import AppContext from '../Context'
+import cities from './Cities'
 
 
 const Form = () => {
@@ -12,6 +13,8 @@ const Form = () => {
     const [inputList, setInputList] = useState([{ id: 0, age: "", gender: "" }])
     const [disabilityType, setDisabilityType] = useState([])
     const [parenthoodForm, setParenthoodForm] = useState([])
+    const [selectedCity, setSelectedCity] = useState('')
+    const [selectedDistrict, setSelectedDistrict] = useState('')
 
     const { formData, setFormData, setFormFilled } = useContext(AppContext)
 
@@ -156,6 +159,10 @@ const Form = () => {
 
     }
 
+   
+
+    /*Button clicks*/
+
     const saveButtonClick = () => {
         if (
             formData.name !== "" &&
@@ -165,7 +172,8 @@ const Form = () => {
             formData.disabilityStatus !== null &&
             formData.parentName !== "" &&
             formData.parenthood.length < 1 &&
-            formData.address !== "" &&
+            formData.city !== "" &&
+            formData.district !== "" &&
             formData.phoneNumber !== "" &&
             formData.educationStatusMother !== "" &&
             formData.educationStatusFather !== "" &&
@@ -189,6 +197,42 @@ const Form = () => {
         console.log(formData)
     }
 
+    /*City names*/
+
+    const cityName = cities.map((item) => item.il)
+
+    const getDistrictByCity = (cityName) => {
+        const districtData = cities.find((item) => item.il === cityName)
+        return districtData ? districtData.ilceler : []
+    }
+
+    const handleCityChange = (event) => {
+        const newCity = event.target.value
+        setSelectedCity(newCity)
+        setSelectedDistrict('')
+
+        const {name, value} = event.target
+
+        setFormData((prevFormData) => 
+        ({...prevFormData,
+            [name] : value
+        }))
+        
+    }
+
+    const handleDistrictChange = (event) => {
+        const newDistrict = event.target.value
+        setSelectedDistrict(newDistrict)
+
+        const {name, value} = event.target
+
+        setFormData((prevFormData) => 
+        ({...prevFormData,
+            [name] : value
+        }))
+
+
+    }
 
     return (
         <>
@@ -310,8 +354,25 @@ const Form = () => {
                                 <p>Baba <input type="checkbox" value={"Baba"} onClick={parentHoodHandler}></input></p>
                                 <p>Diğer <input type="checkbox" value={"Diğer"} onClick={parentHoodHandler}></input></p>
                             </div>
-                            <label>Adres</label>
-                            <input type="text" id="address" name="address" onChange={textInputHandler} />
+                            <label>İl</label>
+                            <select id="city" name="city" onChange={handleCityChange} value={selectedCity}>
+                                <option value="">İl Seçin</option>
+                                {cityName.map((cityName) => (
+                                    <option key={cityName} value={cityName}>
+                                        {cityName}
+                                    </option>
+                                ))}
+                            </select>
+
+                            <label htmlFor="district">İlçe</label>
+                            <select id="district" name="district" onChange={handleDistrictChange} value={selectedDistrict}>
+                                <option value="">İlçe Seçin</option>
+                                {selectedCity && getDistrictByCity(selectedCity).map((cityName) => (
+                                    <option key={cityName} value={cityName}>
+                                        {cityName}
+                                    </option>
+                                ))}
+                            </select>
                             <label>Telefon Numarası</label>
                             <input type="text" id="phone" name="phoneNumber" onChange={textInputHandler}></input>
                             <div className="parent-education">

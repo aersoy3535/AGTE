@@ -1,4 +1,4 @@
-export default [{
+const cities = [{
     il: "Adana",
     plaka: "01",
     ilceler: [
@@ -1458,3 +1458,5 @@ export default [{
     ]
 }
 ];
+
+export default cities
