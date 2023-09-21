@@ -17,11 +17,12 @@ import AppContext from '../Context'
 
 const Chart = () => {
 
-  const { dilScore, sosyalScore, kabaScore, inceScore } = useContext(AppContext)
-  const { dilScoreTreshold, sosyalScoreTreshold, kabaScoreTreshold, inceScoreTreshold } = useContext(AppContext)
+  const { dilScore, sosyalScore, kabaScore, inceScore, gelisimScore } = useContext(AppContext)
+  const { dilScoreTreshold, sosyalScoreTreshold, kabaScoreTreshold, inceScoreTreshold, genelGelisimTreshold } = useContext(AppContext)
 
 
   const data = [
+    { name: "Genel Gelisim", uv: gelisimScore, pv: genelGelisimTreshold },
     { name: 'Dil-Bilişsel', uv: dilScore, pv: dilScoreTreshold },
     { name: 'İnce Motor', uv: inceScore, pv: inceScoreTreshold },
     { name: 'Kaba Motor', uv: kabaScore, pv: kabaScoreTreshold },
@@ -31,35 +32,48 @@ const Chart = () => {
   return (
 
 
-    <VictoryChart width={500} height={400} theme={VictoryTheme.material}  animate={{ duration: 1000, onLoad: { duration: 1000, easing: 'bounce' } }}>
-      <VictoryLegend x={180} y={10} orientation="horizontal" gutter={5} data={[
+    <VictoryChart width={500} height={400} theme={VictoryTheme.material} animate={{ duration: 1000, onLoad: { duration: 1000, easing: 'bounce' } }}>
+      <VictoryLegend x={180} y={10} orientation="horizontal" gutter={10} data={[
         { name: 'Skor', symbol: { fill: 'rgb(33, 68, 85)' } },
         { name: 'Hedef', symbol: { fill: 'rgb(44, 205, 185)' } },
-      ]}/>
-      <VictoryLegend x={350} y={0} orientation="vertical" centerTitle title={"Hedefler"} gutter={2} data={[
-         { name: `Dil Bilişsel ${dilScoreTreshold}`, symbol: {fill : "none"}},
-         { name: `İnce Motor ${inceScoreTreshold}`, symbol: {fill: "none"}},
-         { name: `Kaba Motor ${kabaScoreTreshold}`, symbol: {fill: "none"}},
-         { name: `Sosyal Beceri ${sosyalScoreTreshold}`, symbol: {fill: "none"}}
-      ]}/>
+      ]} />
+      <VictoryLegend
+        x={350}
+        y={10}
+        orientation="vertical"
+        title={"Hedefler"}
+        data={[
+          { name: `Genel Gelişim ${genelGelisimTreshold}`, symbol: { fill: "none" }, labels: {fontSize: 10} },
+          { name: `Dil Bilişsel ${dilScoreTreshold}`, symbol: { fill: "none" }, labels: {fontSize: 10} },
+          { name: `İnce Motor ${inceScoreTreshold}`, symbol: { fill: "none" }, labels: {fontSize: 10} },
+          { name: `Kaba Motor ${kabaScoreTreshold}`, symbol: { fill: "none" }, labels: {fontSize: 10} },
+          { name: `Sosyal Beceri ${sosyalScoreTreshold}`, symbol: { fill: "none" }, labels: {fontSize: 10} },
+        ]}
+        labelComponent={<VictoryLabel dx={-17}/>}
+        style={{
+          title:{fill : 'rgb(44, 205, 185)', fontSize: 14}
+        }}
+      />
+
       <VictoryAxis
         tickValues={data.map((item) => item.name)}
         style={{
-          tickLabels: { fontSize: 8, fill: 'black', angle: -45 },
-          grid: {stroke: 'white'}
+          tickLabels: { fontSize: 8, fill: 'black', angle: -33 },
+          grid: { stroke: 'none' }
         }}
+        tickLabelComponent={<VictoryLabel dy={3}/>}
       />
       <VictoryAxis
         dependentAxis
         offsetX={35}
-        gridComponent={<LineSegment type={"none"}/>}
+        gridComponent={<LineSegment type={"none"} />}
         style={{
           axis: { stroke: 'transparent' },
           ticks: { stroke: 'transparent' },
           tickLabels: { fontSize: 8, fill: 'black' },
-          grid: {stroke: 'white'}
+          grid: { stroke: 'none' }
         }}
-        domain={[0, 60]}
+        domain={[0, 145]}
       />
       <VictoryBar
         data={data}

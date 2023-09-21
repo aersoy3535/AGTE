@@ -744,45 +744,6 @@ table tr td {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-
-  #accept-button {
-    font-size: 14px;
-    padding: 10px 22px;
-  }
-
-  .save-button {
-    font-size: 14px;
-    padding: 10px 22px;
-  }
-}
-
-@media screen and (max-width: 700px) {
-
-  .modal-overlay, .form-overlay, .ageinput-overlay, .enquiry-overlay{
-    overflow: scroll;
-  }
-
-  #calculate-button {
-    font-size: 14px;
-    padding: 10px 22px;
-  }
-
-}
-
-@media screen and (max-height: 800px) {
-
-  .modal-overlay, .form-overlay, .ageinput-overlay, .enquiry-overlay{
-    overflow: scroll;
-  }
-
-  #calculate-button {
-    font-size: 14px;
-    padding: 10px 22px;
-  }
-
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -834,4 +795,65 @@ textarea{
   padding-right: 2%;
   justify-content: space-evenly;
   max-width: 1200px;
+}
+
+.chart-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  background-color: rgb(33, 68, 85);
+  border-radius: 10px;
+  color: white;
+  padding: 8px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+  #accept-button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
+  .save-button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
+  .chart-button{
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  .modal-overlay, .form-overlay, .ageinput-overlay, .enquiry-overlay{
+    overflow: scroll;
+  }
+
+  #calculate-button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
+}
+
+@media screen and (max-height: 800px) {
+
+  .modal-overlay, .form-overlay, .ageinput-overlay, .enquiry-overlay{
+    overflow: scroll;
+  }
+
+  #calculate-button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
 }
