@@ -28,6 +28,7 @@ export function AppProvider({ children }) {
     const [sosyalScore, setSosyalScore] = useState(0)
     const [kabaScore, setKabaScore] = useState(0)
     const [inceScore, setInceScore] = useState(0)
+    const [gelisimScore, setGelisimScore] = useState(0)
 
     /*Score Tresholds*/
     
@@ -35,6 +36,7 @@ export function AppProvider({ children }) {
     const [sosyalScoreTreshold, setSosyalScoreTreshold] = useState(0)
     const [kabaScoreTreshold, setKabaScoreTreshold] = useState(0)
     const [inceScoreTreshold, setInceScoreTreshold] = useState(0)
+    const [genelGelisimTreshold, setGenelGelisimTreshold] = useState(0)
 
     /*Test Termination*/
     const [terminatePoint, setTerminatePoint] = useState(0)
@@ -82,7 +84,8 @@ export function AppProvider({ children }) {
             monthIndex, setMonthIndex, yearIndex, setYearIndex, setDilScore, setSosyalScore, setKabaScore, setInceScore,
             terminatePoint, setTerminatePoint, formData, setFormData, questionHistory, setQuestionHistory,
             dilScore, sosyalScore, kabaScore, inceScore, testTerminated, setTestTerminated, isTerminated, setIsTerminated,
-            dilScoreTreshold, setDilScoreTreshold,sosyalScoreTreshold, setSosyalScoreTreshold,kabaScoreTreshold, setKabaScoreTreshold,inceScoreTreshold, setInceScoreTreshold,
+            dilScoreTreshold, setDilScoreTreshold,sosyalScoreTreshold, setSosyalScoreTreshold,kabaScoreTreshold, setKabaScoreTreshold,inceScoreTreshold, 
+            setInceScoreTreshold, gelisimScore, setGelisimScore, genelGelisimTreshold, setGenelGelisimTreshold,
             secondFormFilled, setSecondFormFilled
         }}>
             {children}
