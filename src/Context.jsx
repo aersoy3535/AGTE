@@ -38,6 +38,21 @@ export function AppProvider({ children }) {
     const [inceScoreTreshold, setInceScoreTreshold] = useState(0)
     const [genelGelisimTreshold, setGenelGelisimTreshold] = useState(0)
 
+    /*20 percent below developement tresholds*/
+    const [dil20Treshold, setDil20Treshold] = useState(0)
+    const [sosyal20Treshold, setSosyal20Treshold] = useState(0)
+    const [kaba20Treshold, setKaba20Treshold] = useState(0)
+    const [ince20Treshold, setInce20Treshold] = useState(0)
+    const [genel20Treshold, setGenel20Treshold] = useState(0)
+
+    /*30 percent below developement tresholds*/
+
+    const [dil30Treshold, setDil30Treshold] = useState(0)
+    const [sosyal30Treshold, setSosyal30Treshold] = useState(0)
+    const [kaba30Treshold, setKaba30Treshold] = useState(0)
+    const [ince30Treshold, setInce30Treshold] = useState(0)
+    const [genel30Treshold, setGenel30Treshold] = useState(0)
+
     /*Test Termination*/
     const [terminatePoint, setTerminatePoint] = useState(0)
     const [testTerminated, setTestTerminated] = useState(false)
@@ -86,7 +101,9 @@ export function AppProvider({ children }) {
             dilScore, sosyalScore, kabaScore, inceScore, testTerminated, setTestTerminated, isTerminated, setIsTerminated,
             dilScoreTreshold, setDilScoreTreshold,sosyalScoreTreshold, setSosyalScoreTreshold,kabaScoreTreshold, setKabaScoreTreshold,inceScoreTreshold, 
             setInceScoreTreshold, gelisimScore, setGelisimScore, genelGelisimTreshold, setGenelGelisimTreshold,
-            secondFormFilled, setSecondFormFilled
+            secondFormFilled, setSecondFormFilled,setDil20Treshold,setSosyal20Treshold,setKaba20Treshold,setInce20Treshold,setGenel20Treshold,
+            setDil30Treshold, setSosyal30Treshold, setKaba30Treshold, setInce30Treshold,setGenel30Treshold,dil20Treshold,sosyal20Treshold,kaba20Treshold,ince20Treshold,
+            genel20Treshold, dil30Treshold, sosyal30Treshold, kaba30Treshold, ince30Treshold, genel30Treshold
         }}>
             {children}
         </AppContext.Provider>

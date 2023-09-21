@@ -19,6 +19,8 @@ const Chart = () => {
 
   const { dilScore, sosyalScore, kabaScore, inceScore, gelisimScore } = useContext(AppContext)
   const { dilScoreTreshold, sosyalScoreTreshold, kabaScoreTreshold, inceScoreTreshold, genelGelisimTreshold } = useContext(AppContext)
+  const { dil20Treshold,sosyal20Treshold,kaba20Treshold,ince20Treshold,
+          genel20Treshold, dil30Treshold, sosyal30Treshold, kaba30Treshold, ince30Treshold, genel30Treshold} = useContext(AppContext)
 
 
   const data = [
@@ -26,7 +28,23 @@ const Chart = () => {
     { name: 'Dil-Bilişsel', uv: dilScore, pv: dilScoreTreshold },
     { name: 'İnce Motor', uv: inceScore, pv: inceScoreTreshold },
     { name: 'Kaba Motor', uv: kabaScore, pv: kabaScoreTreshold },
-    { name: 'Sosyal Beceri - Öz Bakım', uv: sosyalScore, pv: sosyalScoreTreshold },
+    { name: 'Sosyal Beceri - Öz Bakım', uv: sosyalScore, pv: sosyalScoreTreshold }
+  ]
+
+  const twentyTresholds = [
+    { name: "Genel Gelisim", pv: genel20Treshold  },
+    { name: 'Dil-Bilişsel', pv:  dil20Treshold},
+    { name: 'İnce Motor', pv:  ince20Treshold},
+    { name: 'Kaba Motor', pv:  kaba20Treshold},
+    { name: 'Sosyal Beceri - Öz Bakım', pv:  sosyal20Treshold}
+  ]
+
+  const thirtyTresholds = [
+    { name: "Genel Gelisim", pv: genel30Treshold  },
+    { name: 'Dil-Bilişsel', pv:  dil30Treshold},
+    { name: 'İnce Motor', pv:  ince30Treshold},
+    { name: 'Kaba Motor', pv:  kaba30Treshold},
+    { name: 'Sosyal Beceri - Öz Bakım', pv:  sosyal30Treshold}
   ]
 
   return (
@@ -79,7 +97,7 @@ const Chart = () => {
         data={data}
         x="name"
         y="uv"
-        barWidth={12}
+        barWidth={20}
         style={{
           data: { stroke: 'rgb(33, 68, 85)' },
         }}
@@ -96,6 +114,14 @@ const Chart = () => {
         data: { stroke: 'rgb(44, 205, 185)' },
       }}
       />
+
+      <VictoryLine data={twentyTresholds} x="name" y="pv" style={{
+        data: {stroke: 'orange'}
+      }} />
+
+      <VictoryLine data={thirtyTresholds} x="name" y="pv" style={{
+        data: {stroke: 'red'}
+      }} />
     </VictoryChart>
   )
 }
